@@ -1,0 +1,28 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+class ByName
+{
+    static void Main()
+    {
+        string ID = "testImage" ;
+        
+
+        IWebDriver driver = new ChromeDriver();
+
+        driver.Navigate().GoToUrl("http://testing.todvachev.com/selectors/id/");
+
+        IWebElement element = driver.FindElement(By.Id(ID));
+
+        if (element.Displayed)
+        {
+            System.Console.WriteLine("Able to find the Name");
+        }
+        else
+        {
+            System.Console.WriteLine("Not able to find the name");
+        }
+        driver.Quit();
+    }
+}
+
